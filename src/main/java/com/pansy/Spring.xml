@@ -7,4 +7,10 @@
     <!-- 单例bean，以下两例效果相同，单例bean是默认的-->
     <bean id="singleBean" class="com.pansy.pojo.SingleBean"/>
     <bean id="singleBean2" class="com.pansy.pojo.SingleBean" scope="singleton"/>
+    <!-- bean部署采用原型作用域时，每次产生一个特定的bean的请求时都会创建一个新的bean实例。
+    与其他作用域相比，Spring不管理原型bean的完整生命周期，容器初始化、配置、另外组装原型对象，并传递给客户端后，不再记录原型实例。
+    在原型作用域下，不会调用配置的销毁生命周期回调函数。客户端代码必须清理原型作用域的对象并释放原型bean拥有的资源-->
+    <bean id="prototypeBean" class="com.pansy.pojo.PrototypeBean" scope="prototype"/>
+    <!-- 假设你想在运行时让单例作用域的bean重复获得原型作用域bean的实例。你不能依赖注入原型作用域的bean到你的单例bean中，
+    因为当Spring容器实例化单例bean，解析并注入它的依赖时，注入只发生一次。如果你在运行时不止一次需要原型bean的实例，请看方法注入-->
 </beans>
