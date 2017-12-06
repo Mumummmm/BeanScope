@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/beans/spring-beans.xsd">
+    <!-- bean的作用域为singleton prototype request session application websocket -->
+    <!-- 单例bean，以下两例效果相同，单例bean是默认的-->
+    <bean id="singleBean" class="com.pansy.pojo.SingleBean"/>
+    <bean id="singleBean2" class="com.pansy.pojo.SingleBean" scope="singleton"/>
+</beans>
